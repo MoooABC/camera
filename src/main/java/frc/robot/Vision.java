@@ -2,10 +2,7 @@ package frc.robot;
 
 import com.spikes2212.dashboard.RootNamespace;
 import limelight.Limelight;
-import limelight.networktables.LimelightResults;
 import limelight.networktables.LimelightSettings.LEDMode;
-
-import java.util.Optional;
 
 public class Vision {
 
@@ -51,8 +48,6 @@ public class Vision {
     }
 
     public double getDistance() {
-        return 196.0;
-        //double ty = getVerticalOffset();
-        //return (VisionConstants.TAG_FROM_FLOOR- VisionConstants.CAMERA_FROM_FLOOR) / Math.tan(VisionConstants.CAMERA_ANGLE+ty);
+        return -1.0;
     }
 }

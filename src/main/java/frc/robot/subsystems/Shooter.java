@@ -5,6 +5,7 @@ import com.spikes2212.util.smartmotorcontrollers.TalonFXWrapper;
 import frc.robot.RobotMap;
 
 public class Shooter extends SmartMotorControllerGenericSubsystem {
+
     private final TalonFXWrapper motor;
     private static Shooter instance;
 

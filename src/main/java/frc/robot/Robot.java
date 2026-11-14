@@ -5,10 +5,8 @@
 package frc.robot;
 
 import com.spikes2212.dashboard.RootNamespace;
-import com.spikes2212.util.smartmotorcontrollers.TalonFXWrapper;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.commands.ShootWithDistance;
 import frc.robot.commands.SmartShoot;
 import frc.robot.subsystems.Shooter;
 
