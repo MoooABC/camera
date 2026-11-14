@@ -4,19 +4,32 @@
 
 package frc.robot;
 
+import com.spikes2212.dashboard.RootNamespace;
+import com.spikes2212.util.smartmotorcontrollers.TalonFXWrapper;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.ShootWithDistance;
+import frc.robot.commands.SmartShoot;
+import frc.robot.subsystems.Shooter;
+
+import java.util.function.Supplier;
 
 public class Robot extends TimedRobot {
 
-    @Override
-    public void robotInit() {
+    private final Vision vision;
+    private final RootNamespace namespace = new RootNamespace("robot");
 
+    public Robot() {
+        vision = new Vision();
+        Supplier<Double> setPoint = namespace.addConstantDouble("setpoint", 0.0);
+        namespace.putCommand("smart shoot", new SmartShoot(Shooter.getInstance(), setPoint));
     }
 
     @Override
     public void robotPeriodic() {
-
+        vision.updateNamespace();
+        namespace.update();
+        SmartShoot.updateNamespace();
     }
 
     @Override

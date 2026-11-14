@@ -3,7 +3,7 @@ package frc.robot;
 public class RobotMap {
 
     public interface CAN {
-
+        int SHOOTER_ID = 20;
     }
 
     public interface DIO {
