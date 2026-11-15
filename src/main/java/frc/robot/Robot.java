@@ -25,7 +25,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void robotPeriodic() {
-        vision.updateNamespace();
+        CommandScheduler.getInstance().run();
         namespace.update();
         SmartShoot.updateNamespace();
     }
@@ -33,6 +33,12 @@ public class Robot extends TimedRobot {
     @Override
     public void disabledInit() {
         CommandScheduler.getInstance().cancelAll();
+        vision.setThrottle(true);
+    }
+
+    @Override
+    public void disabledExit() {
+//        vision.setThrottle(false);
     }
 
     @Override
